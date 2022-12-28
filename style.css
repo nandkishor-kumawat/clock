@@ -29,8 +29,10 @@
     border-radius: 50%;
     /* background-color: #123654; */
     background-color: #05080147;
-    border: 30px solid #112c44;
+    /* border: 30px solid #112c44; */
+    border: 30px solid #fff;
     padding: 1rem;
+    box-shadow: 0 0 5px white, 0 0 15px white, 0 0 25px white, 0 0 35px white, inset 0 0 15px white;
 }
 
 .clock {
