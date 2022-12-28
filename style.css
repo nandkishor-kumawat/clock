@@ -27,9 +27,16 @@
     width: 30rem;
     height: 30rem;
     border-radius: 50%;
-    background-color: #123654;
+    /* background-color: #123654; */
+    background-color: #05080147;
     border: 30px solid #112c44;
     padding: 1rem;
+}
+
+.clock {
+    position: relative;
+    width: 100%;
+    height: 100%;
 }
 
 .clock::after {
@@ -42,14 +49,25 @@
     width: 7%;
     border-radius: 50%;
     transform: translate(-50%, -50%);
-    /* box-shadow: 0 0 5px orange, 0 0 25px orange, 0 0 45px orange; */
+    z-index: 1;
+    box-shadow: 0 0 5px orange, 0 0 25px orange;
 }
 
-.clock {
-    position: relative;
-    width: 100%;
-    height: 100%;
+.clock::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: green;
+    height: 3%;
+    width: 3%;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    box-shadow: 0 0 5px green, 0 0 25px green, 0 0 35px green;
 }
+
+
 
 .hand {
     background-color: #000;
@@ -64,18 +82,22 @@
     width: 30%;
     height: 6px;
     right: 50%;
+    background-color: red;
+    box-shadow: 0 0 5px red, 0 0 15px red, 0 0 25px red, 0 0 35px red;
 }
 
 #minutesHand {
     width: 40%;
     right: 50%;
-    height: 4px;
+    height: 3px;
+    background-color: green;
+    box-shadow: 0 0 5px green, 0 0 15px green, 0 0 25px green, 0 0 35px green;
 }
 
 #secondsHand {
     width: 50%;
     right: 50%;
-    height: 3px;
-    /* background-color: green;
-    box-shadow: 0 0 5px green, 0 0 25px green, 0 0 45px green; */
+    height: 1px;
+    background-color: yellow;
+    box-shadow: 0 0 5px yellow, 0 0 15px yellow, 0 0 25px yellow, 0 0 35px yellow;
 }
