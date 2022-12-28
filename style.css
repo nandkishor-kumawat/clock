@@ -1,0 +1,81 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #16181e;
+    height: 100vh;
+    flex-direction: column;
+}
+
+#digitalClock {
+    background-color: #1e2131;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    font-size: 3rem;
+    padding: 6px 18px;
+}
+
+#analogClock {
+    width: 30rem;
+    height: 30rem;
+    border-radius: 50%;
+    background-color: #123654;
+    border: 30px solid #112c44;
+    padding: 1rem;
+}
+
+.clock::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-color: orange;
+    height: 7%;
+    width: 7%;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    /* box-shadow: 0 0 5px orange, 0 0 25px orange, 0 0 45px orange; */
+}
+
+.clock {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.hand {
+    background-color: #000;
+    position: absolute;
+    top: 50%;
+    transform-origin: 100%;
+    transition: all 0.05s;
+    transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
+}
+
+#hoursHand {
+    width: 30%;
+    height: 6px;
+    right: 50%;
+}
+
+#minutesHand {
+    width: 40%;
+    right: 50%;
+    height: 4px;
+}
+
+#secondsHand {
+    width: 50%;
+    right: 50%;
+    height: 3px;
+    /* background-color: green;
+    box-shadow: 0 0 5px green, 0 0 25px green, 0 0 45px green; */
+}
