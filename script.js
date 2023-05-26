@@ -12,9 +12,14 @@ function updateTime() {
     m = (m < 10) ? "0" + m : m;
     s = (s < 10) ? "0" + s : s;
 
-    hoursHand.style.transform = `rotate(${((h / 12) * 360) + ((m / 60) * 30) + 90}deg)`;
-    minutesHand.style.transform = `rotate(${((m / 60) * 360) + ((s / 60) * 6) + 90}deg)`;
-    secondsHand.style.transform = `rotate(${(s / 60 * 360) + 90}deg)`;
+    let ha = ((h / 12) * 360) + ((m / 60) * 30) % 360;
+    let ma = ((m / 60) * 360) + ((s / 60) * 6) % 360;
+    let sa = (s / 60 * 360) % 360;
+
+
+    hoursHand.style.rotate = ha + 'deg';
+    minutesHand.style.rotate = ma + 'deg';
+    secondsHand.style.rotate = sa + 'deg';
 
     digitalClock.innerHTML = `${h}:${m}:${s}`
 }
