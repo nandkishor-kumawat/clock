@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    user-select: none;
 }
 
 .container {
@@ -24,15 +25,15 @@
 }
 
 #analogClock {
-    width: 30rem;
-    height: 30rem;
+    width: 80vmin;
+    height: 80vmin;
     border-radius: 50%;
     /* background-color: #123654; */
     background-color: #05080147;
     /* border: 30px solid #112c44; */
-    border: 30px solid #fff;
+    border: 3vmin solid #112c44;
     padding: 1rem;
-    box-shadow: 0 0 5px white, 0 0 15px white, 0 0 25px white, 0 0 35px white, inset 0 0 15px white;
+    box-shadow: 0 0 5px white, 0 0 15px white, 0 0 25px white, 0 0 30px white, inset 0 0 15px white;
 }
 
 .clock {
@@ -69,37 +70,70 @@
     box-shadow: 0 0 5px green, 0 0 25px green, 0 0 35px green;
 }
 
+.number {
+    /* background: red; */
+    color: #fff;
+    font-size: 30px;
+    rotate: calc(var(--d) * 30deg);
+    transform-origin: bottom center;
+    left: 50%;
+    bottom: 50%;
+    position: absolute;
+    translate: -50%;
+    height: 48%;
+}
 
+.dash{
+    position: absolute;
+    width: 1px;
+    height: 52%;
+    left: 50%;
+    bottom: 50%;
+    translate: -50%;
+    rotate: calc(var(--d) * 6deg);
+    transform-origin: bottom center;
+    border-top-width:8px;
+    border-top-style: solid;
+    border-top-color: white;
+}
+
+.dash:nth-child(5n + 2) {
+    border-width: 15px;
+    /* background: red; */
+}
+
+.number>div {
+    rotate: calc(var(--d) * -30deg);
+}
 
 .hand {
     background-color: #000;
     position: absolute;
-    top: 50%;
-    transform-origin: 100%;
-    transition: all 0.05s;
+    left: 50%;
+    bottom: 50%;
+    translate: -50%;
+    transform-origin: bottom center;
+    transition: rotate 0.05s;
     transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1);
 }
 
 #hoursHand {
-    width: 30%;
-    height: 6px;
-    right: 50%;
+    height: 30%;
+    width: 6px;
     background-color: red;
     box-shadow: 0 0 5px red, 0 0 15px red, 0 0 25px red, 0 0 35px red;
 }
 
 #minutesHand {
-    width: 40%;
-    right: 50%;
-    height: 3px;
+    height: 40%;
+    width: 3px;
     background-color: green;
     box-shadow: 0 0 5px green, 0 0 15px green, 0 0 25px green, 0 0 35px green;
 }
 
 #secondsHand {
-    width: 50%;
-    right: 50%;
-    height: 1px;
+    height: 45%;
+    width: 1px;
     background-color: yellow;
-    box-shadow: 0 0 5px yellow, 0 0 15px yellow, 0 0 25px yellow, 0 0 35px yellow;
+    /* box-shadow: 0 0 5px yellow, 0 0 15px yellow, 0 0 25px yellow, 0 0 35px yellow; */
 }
