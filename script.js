@@ -9,14 +9,14 @@ function updateTime() {
     let m = date.getMinutes();
     let s = date.getSeconds();
 
-    let ha = ((h / 12) * 360) + ((m / 60) * 30) % 360;
-    let ma = ((m / 60) * 360) + ((s / 60) * 6) % 360;
-    let sa = (s / 60 * 360) % 360;
+    let ha = ((h / 12) * 360) + ((m / 60) * 30);
+    let ma = ((m / 60) * 360) + ((s / 60) * 6);
+    let sa = (s / 60 * 360);
 
 
-    hoursHand.style.rotate = ha + 'deg';
-    minutesHand.style.rotate = ma + 'deg';
-    secondsHand.style.rotate = sa + 'deg';
+    hoursHand.style.rotate = `${ha}deg`;
+    minutesHand.style.rotate = `${ma}deg`;
+    secondsHand.style.rotate =  `${sa}deg`;
 
     digitalClock.innerHTML = `${String(h).padStart(2, 0)}:${String(m).padStart(2, 0)}:${String(s).padStart(2, 0)}`
 }
