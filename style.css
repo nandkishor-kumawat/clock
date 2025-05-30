@@ -1,140 +1,141 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    user-select: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
 }
 
 .container {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: #16181e;
-    height: 100vh;
-    flex-direction: column;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #16181e;
+  height: 100dvh;
+  flex-direction: column;
 }
 
 #digitalClock {
-    background-color: #1e2131;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    font-size: 3rem;
-    padding: 6px 18px;
+  background-color: #1e2131;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-size: 3rem;
+  padding: 6px 18px;
 }
 
 #analogClock {
-    width: 80vmin;
-    height: 80vmin;
-    border-radius: 50%;
-    /* background-color: #123654; */
-    background-color: #05080147;
-    /* border: 30px solid #112c44; */
-    border: 3vmin solid #112c44;
-    padding: 1rem;
-    box-shadow: 0 0 5px white, 0 0 15px white, 0 0 25px white, 0 0 30px white, inset 0 0 15px white;
+  width: 80vmin;
+  height: 80vmin;
+  border-radius: 50%;
+  /* background-color: #123654; */
+  background-color: #05080147;
+  /* border: 30px solid #112c44; */
+  border: 3vmin solid #112c44;
+  padding: 1rem;
+  box-shadow: 0 0 5px white, 0 0 15px white, 0 0 25px white, 0 0 30px white,
+    inset 0 0 15px white;
 }
 
 .clock {
-    position: relative;
-    width: 100%;
-    height: 100%;
+  position: relative;
+  width: 100%;
+  height: 100%;
 }
 
 .clock::after {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    background-color: orange;
-    height: 7%;
-    width: 7%;
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-    box-shadow: 0 0 5px orange, 0 0 25px orange;
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: orange;
+  height: 7%;
+  width: 7%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  box-shadow: 0 0 5px orange, 0 0 25px orange;
 }
 
 .clock::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    background-color: green;
-    height: 3%;
-    width: 3%;
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-    box-shadow: 0 0 5px green, 0 0 25px green, 0 0 35px green;
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background-color: green;
+  height: 3%;
+  width: 3%;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  box-shadow: 0 0 5px green, 0 0 25px green, 0 0 35px green;
 }
 
 .number {
-    /* background: red; */
-    color: #fff;
-    font-size: 28px;
-    font-size: clamp(1rem, 5vw, 2rem);
-    rotate: calc(var(--d) * 30deg);
-    transform-origin: bottom center;
-    left: 50%;
-    bottom: 50%;
-    position: absolute;
-    translate: -50%;
-    height: 48%;
+  /* background: red; */
+  color: #fff;
+  font-size: 28px;
+  font-size: clamp(1rem, 5vw, 2rem);
+  rotate: calc(var(--d) * 30deg);
+  transform-origin: bottom center;
+  left: 50%;
+  bottom: 50%;
+  position: absolute;
+  translate: -50%;
+  height: 48%;
 }
 
-.dash{
-    position: absolute;
-    width: 1px;
-    height: 52%;
-    left: 50%;
-    bottom: 50%;
-    translate: -50%;
-    rotate: calc(var(--d) * 6deg);
-    transform-origin: bottom center;
-    border-top-width:8px;
-    border-top-style: solid;
-    border-top-color: white;
+.dash {
+  position: absolute;
+  width: 1px;
+  height: 52%;
+  left: 50%;
+  bottom: 50%;
+  translate: -50%;
+  rotate: calc(var(--d) * 6deg);
+  transform-origin: bottom center;
+  border-top-width: 8px;
+  border-top-style: solid;
+  border-top-color: white;
 }
 
 .dash:nth-child(5n + 2) {
-    border-width: 15px;
-    /* background: red; */
+  border-width: 15px;
+  /* background: red; */
 }
 
-.number>div {
-    rotate: calc(var(--d) * -30deg);
+.number > div {
+  rotate: calc(var(--d) * -30deg);
 }
 
 .hand {
-    background-color: #000;
-    position: absolute;
-    left: 50%;
-    bottom: 50%;
-    translate: -50%;
-    transform-origin: bottom center;
-    /* transition: rotate 0.05s; */
-    /* transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1); */
+  background-color: #000;
+  position: absolute;
+  left: 50%;
+  bottom: 50%;
+  translate: -50%;
+  transform-origin: bottom center;
+  /* transition: rotate 0.05s; */
+  /* transition-timing-function: cubic-bezier(0.1, 2.7, 0.58, 1); */
 }
 
 #hoursHand {
-    height: 30%;
-    width: 6px;
-    background-color: red;
-    box-shadow: 0 0 5px red, 0 0 15px red, 0 0 25px red, 0 0 35px red;
+  height: 30%;
+  width: 6px;
+  background-color: red;
+  box-shadow: 0 0 5px red, 0 0 15px red, 0 0 25px red, 0 0 35px red;
 }
 
 #minutesHand {
-    height: 40%;
-    width: 3px;
-    background-color: green;
-    box-shadow: 0 0 5px green, 0 0 15px green, 0 0 25px green, 0 0 35px green;
+  height: 40%;
+  width: 3px;
+  background-color: green;
+  box-shadow: 0 0 5px green, 0 0 15px green, 0 0 25px green, 0 0 35px green;
 }
 
 #secondsHand {
-    height: 45%;
-    width: 1px;
-    background-color: yellow;
-    /* box-shadow: 0 0 5px yellow, 0 0 15px yellow, 0 0 25px yellow, 0 0 35px yellow; */
+  height: 45%;
+  width: 1px;
+  background-color: yellow;
+  /* box-shadow: 0 0 5px yellow, 0 0 15px yellow, 0 0 25px yellow, 0 0 35px yellow; */
 }
